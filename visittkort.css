@@ -1,0 +1,63 @@
+.card {
+    width: 500px;
+    height: 300px;
+    border-radius: 20px;
+    background: #efa964;
+    color: white;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 40% auto;
+    text-align: left;
+}
+.card-details {
+    padding: 10px;
+}
+.firstname {
+    font-size: 20px;
+}
+.lastname {
+    font-weight: 600;
+    font-size: 30px;
+    color: black;
+}
+.picture {
+    place-items: center;
+    display: grid;
+}
+img {
+    width: 100%;
+}
+.card-about {
+    margin-top: 10px;
+    display: grid;
+    grid-auto-flow: column;
+}
+.item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+.input {
+    font-size: 15px;
+}
+.label {
+    margin-top: 5px;
+    font-weight: 600;
+    color: black;
+}
+
+
+.hobbies {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+}
+.label {
+    font-weight: 600;
+    color: black;
+}
+
+.input {
+    margin-top: 5px;
+    line-height: 20px;
+}
