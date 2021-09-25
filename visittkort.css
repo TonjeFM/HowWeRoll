@@ -1,6 +1,6 @@
 .card {
-    width: 500px;
-    height: 300px;
+    width: 450px;
+    height: 270px;
     border-radius: 20px;
     background: #efa964;
     color: white;
@@ -8,6 +8,7 @@
     display: grid;
     grid-template-columns: 40% auto;
     text-align: left;
+    padding: 20px;
 }
 .card-details {
     padding: 10px;

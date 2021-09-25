@@ -3,23 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Oversikt</title>
-    <link rel="stylesheet" href="hwr-report.css">
+    <link rel="stylesheet" href="layout.css">
 </head>
 <body>
-    <nav id="meny">
-        <a href="index.html">Systematikere</a>
-        <a href="how-we-roll.html">Registrer</a>
-        <a href="hwr-report.html">Oversikt</a>
-        <a href="index.html#visittkort">Visittkort</a>
-    </nav>
+    <div id="meny">
+        <div>
+            <a id="logo" href="index.html">Systematikere</a>
+        </div>
 
+        <div id="nav">
+            <a href="how-we-roll.html">Registrer</a>
+            <a href="hwr-report.html">Oversikt</a>
+            <a href="index.html#visittkort">Visittkort</a>
+        </div>
+    </div>
     <header id="header">
         <img id="headerBilde" src="img/Team.jpg">
-        <h1>Fyll inn informasjonen din og fine preferanser for å finne ditt perfekte team</h1>
+        <h1>Oversikt over ansattes preferanser</h1>
     </header>
 
     <div id="oversikt">
-    <canvas></canvas>
+        <canvas id="cnv" width="1000" height="500"></canvas>
     </div>
 
     <footer id="footer">
@@ -27,4 +31,58 @@
     </footer>
 
 </body>
+<script>
+
+    var cnv  = document.getElementById("cnv");
+    var ctx = cnv.getContext("2d");
+    ctx.lineWidth = 2;
+    ctx.clearRect(0, 0, cnv.width, cnv.height);
+
+    //Linje 1
+    ctx.fillStyle = "black";
+    ctx.font = "30px Arial";
+    ctx.fillText("Morgenfugl", 20, 200);
+
+    ctx.beginPath(); //line
+    ctx.strokeStyle = "#000000";
+    ctx.moveTo(200 ,200);
+    ctx.lineTo(600,200);
+    ctx.closePath();
+    ctx.stroke();
+
+    ctx.beginPath(); //circle
+    ctx.fillStyle = "#efa964";
+    ctx.strokeStyle = "#000000";
+    ctx.arc(400, 200, 20, 0, 2*Math.PI); //førte tall får vi fra json
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.fillStyle = "black";
+    ctx.font = "30px Arial";
+    ctx.fillText("Nattugle", 625, 200);
+
+    //Linje 2
+    ctx.fillStyle = "black";
+    ctx.font = "30px Arial";
+    ctx.fillText("Samarbeid", 20, 300);
+
+    ctx.beginPath(); //line
+    ctx.strokeStyle = "#000000";
+    ctx.moveTo(200 ,300);
+    ctx.lineTo(600,300);
+    ctx.closePath();
+    ctx.stroke();
+
+    ctx.beginPath(); //circle
+    ctx.fillStyle = "#efa964";
+    ctx.strokeStyle = "#000000";
+    ctx.arc(550, 300, 20, 0, 2*Math.PI); //førte tall får vi fra json
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.fillStyle = "black";
+    ctx.font = "30px Arial";
+    ctx.fillText("Selvstendig", 625, 300);
+
+</script>
 </html>
