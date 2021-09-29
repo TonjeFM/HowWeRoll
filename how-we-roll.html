@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Registrer</title>
     <link rel="stylesheet" href="layout.css">
 </head>
@@ -24,37 +25,60 @@
 
     <div id="registrer">
         <form>
-            <label for="fnavn">Fornavn:</label><br>
-            <input type="text" id="fnavn" name="fnavn" placeholder="John"><br>
-            <label for="enavn">Etternavn:</label><br>
-            <input type="text" id="enavn" name="enavn" placeholder="Doe"><br>
-
-            <label for="epost">E-post:</label><br>
-            <input type="text" id="epost" name="epost" placeholder="E-post"><br>
-            <label for="adresse">Adresse:</label><br>
-            <input type="text" id="adresse" name="adresse" placeholder="Adresse"><br>
-
-            <label for="telefon">Telefon:</label><br>
-            <input type="text" id="telefon" name="telefon" placeholder="Telefon"><br>
-            <label for="mobil">Mobil:</label><br>
-            <input type="text" id="mobil" name="mobil" placeholder="Mobil"><br>
-
-            <p>De neste feltene ønsker vi å vite på en skala fra 1-7, hvor 1 er i liten grad og 7 er i stor grad, dine preferanser.</p>
 
             <label for="morgenfugl">Morgenfugl:</label><br>
-            <input type="text" id="morgenfugl" name="morgenfugl" placeholder="1-7"><br>
+            <input type="range" id="morgenfugl" name="morgenfugl" min="200" max="600" value="400">
             <label for="samarbeid">Samarbeid:</label><br>
-            <input type="text" id="samarbeid" name="samarbeid" placeholder="1-7"><br>
+
+            <input type="range" id="samarbeid" name="samarbeid" min="200" max="600" value="400">
             <label for="flexitid">Flexitid:</label><br>
-            <input type="text" id="flexitid" name="flexitid" placeholder="1-7"><br>
+            <input type="range" id="flexitid" name="flexitid" min="200" max="600" value="400">
 
             <input type="submit" value="Lagre">
         </form>
     </div>
+<div class="results">
+    <h2>Form Data</h2>
+    <pre></pre>
+</div>
 
     <footer id="footer">
         <p>Something</p>
     </footer>
 
+<script>
+    // From https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch (seen 2021-09-27)
+    // Example POST method implementation using fetch:
+    async function postData(url = '', data = {}) {
+        // Default options are marked with *
+        const response = await fetch(url, {
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            mode: 'cors', // no-cors, *cors, same-origin
+            cache: 'no-cache', // *default, no-cache, reload, force-cache,only-if-cached
+            credentials: 'same-origin', // include, *same-origin, omit
+            headers: {
+                'Content-Type': 'application/json',
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            redirect: 'follow', // manual, *follow, error
+            referrerPolicy: 'no-referrer', // no-referrer,*no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+            body: JSON.stringify(data) // body data type must match"Content-Type"header
+        });
+        return response.json(); // parses JSON response into native JavaScriptobjects
+    }
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        const data = new FormData(event.target);
+        const formJSON = Object.fromEntries(data.entries());
+        const results = document.querySelector('.results pre');
+        postData('https://bacit.info/', formJSON)
+            .then(data => {
+                results.innerText = JSON.stringify(data, null, 2);
+            });
+    }
+    const form = document.querySelector('form');
+    form.addEventListener('submit', handleSubmit);
+</script>
 </body>
 </html>

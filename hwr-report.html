@@ -33,6 +33,38 @@
 </body>
 <script>
 
+    fetch('https://bacit.info/hwr/20210928172655-a5438fd7664563a1f22c96dc612aeeee.json').then(function (response) {
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error("Something went wrong");
+        }
+    }).then(function(data) {
+        console.log(data);
+        ctx.beginPath(); //circle
+        ctx.fillStyle = "#efa964";
+        ctx.strokeStyle = "#000000";
+        ctx.arc(data.samarbeid, 200, 20, 0, 2*Math.PI); //førte tall får vi fra json
+        ctx.fill();
+        ctx.stroke();
+    })
+
+    fetch('https://bacit.info/hwr/20210929003209-b98a1235df20cdf07746ac142e11d8ac.json').then(function (response) {
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error("Something went wrong");
+        }
+    }).then(function(data) {
+        console.log(data);
+        ctx.beginPath(); //circle
+        ctx.fillStyle = "red";
+        ctx.strokeStyle = "#000000";
+        ctx.arc(data.samarbeid, 200, 20, 0, 2*Math.PI); //førte tall får vi fra json
+        ctx.fill();
+        ctx.stroke();
+    })
+
     var cnv  = document.getElementById("cnv");
     var ctx = cnv.getContext("2d");
     ctx.lineWidth = 2;
@@ -50,12 +82,7 @@
     ctx.closePath();
     ctx.stroke();
 
-    ctx.beginPath(); //circle
-    ctx.fillStyle = "#efa964";
-    ctx.strokeStyle = "#000000";
-    ctx.arc(400, 200, 20, 0, 2*Math.PI); //førte tall får vi fra json
-    ctx.fill();
-    ctx.stroke();
+
 
     ctx.fillStyle = "black";
     ctx.font = "30px Arial";
