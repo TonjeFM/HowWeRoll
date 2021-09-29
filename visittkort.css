@@ -9,9 +9,10 @@
     grid-template-columns: 40% auto;
     text-align: left;
     padding: 20px;
+
 }
 .card-details {
-    padding: 10px;
+    padding-left: 30px;
 }
 .firstname {
     font-size: 20px;
@@ -20,10 +21,16 @@
     font-weight: 600;
     font-size: 30px;
     color: black;
+    padding-bottom: 5px;
 }
-.picture {
-    place-items: center;
-    display: grid;
+.school {
+    font-size: 20px;
+}
+.program {
+    font-weight: 600;
+    font-size: 15px;
+    color: black;
+
 }
 img {
     width: 100%;
@@ -38,27 +45,15 @@ img {
     flex-direction: column;
     margin-bottom: 5px;
 }
-.input {
-    font-size: 15px;
-}
+
 .label {
     margin-top: 5px;
-    font-weight: 600;
-    color: black;
-}
-
-
-.hobbies {
-    display: flex;
-    flex-direction: column;
-    margin-top: 5px;
-}
-.label {
     font-weight: 600;
     color: black;
 }
 
 .input {
+    font-size: 15px;
     margin-top: 5px;
     line-height: 20px;
 }

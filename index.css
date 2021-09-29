@@ -5,6 +5,7 @@
     background-color: #E8E8E8;
 
 
+
 }
 #infoTekst {
     text-align: center;
@@ -38,7 +39,18 @@ button:hover {
 
 #visittkort {
     width: 100%;
-    height: 800px;
-
-
+    height: max-content;
+    padding-bottom: 50px;
+    display: grid;
+    justify-content: center;
+}
+h1 {
+    text-align: center;
+    font-size: 50px;
+    padding-bottom: 5px;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 50px 50px;
 }

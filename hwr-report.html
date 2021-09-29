@@ -1,115 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Oversikt</title>
-    <link rel="stylesheet" href="layout.css">
-</head>
-<body>
-    <div id="meny">
-        <div>
-            <a id="logo" href="index.html">Systematikere</a>
+    <head>
+        <meta charset="UTF-8">
+        <title>Systematikere - Preferanser</title>
+        <link rel="stylesheet" href="layout.css">
+        <style>
+            #pref {
+                width: 100%;
+                height: max-content;
+                text-align: center;
+                padding-top: 50px;
+
+
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="meny">
+            <div>
+                <a id="logo" href="index.html">Systematikere</a>
+            </div>
+
+            <div id="nav">
+                <a href="how-we-roll.html">Registrer</a>
+                <a href="hwr-report.html">Preferanser</a>
+                <a href="index.html#visittkort">Visittkort</a>
+            </div>
         </div>
 
-        <div id="nav">
-            <a href="how-we-roll.html">Registrer</a>
-            <a href="hwr-report.html">Oversikt</a>
-            <a href="index.html#visittkort">Visittkort</a>
+        <header id="header">
+            <img id="headerBilde" src="img/Connect.jpg" alt="Bilde av ludobrikker på et ark med linjer mellom brikkene">
+            <h1>PREFERANSER</h1>
+        </header>
+
+        <div id="pref">
+            <canvas id="cnv" width="1000" height="500"></canvas>
         </div>
-    </div>
-    <header id="header">
-        <img id="headerBilde" src="img/Team.jpg">
-        <h1>Oversikt over ansattes preferanser</h1>
-    </header>
 
-    <div id="oversikt">
-        <canvas id="cnv" width="1000" height="500"></canvas>
-    </div>
+        <footer id="footer">
+            <h3>Systematikere</h3>
+            <a href="https://github.com/3Beast/Gruppe-3B" target="_blank">Laget av Gruppe 3B</a>
+        </footer>
 
-    <footer id="footer">
-        <p>Something</p>
-    </footer>
+        <script>
 
-</body>
-<script>
+            fetch('https://bacit.info/hwr/20210929174340-5118d2d7e2e17fbcf6629867332b7165.json').then(function (response) {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error("Something went wrong");
+                }
+            }).then(function(data) {
+                console.log(data);
 
-    fetch('https://bacit.info/hwr/20210928172655-a5438fd7664563a1f22c96dc612aeeee.json').then(function (response) {
-        if (response.ok) {
-            return response.json();
-        } else {
-            throw new Error("Something went wrong");
-        }
-    }).then(function(data) {
-        console.log(data);
-        ctx.beginPath(); //circle
-        ctx.fillStyle = "#efa964";
-        ctx.strokeStyle = "#000000";
-        ctx.arc(data.samarbeid, 200, 20, 0, 2*Math.PI); //førte tall får vi fra json
-        ctx.fill();
-        ctx.stroke();
-    })
+                //Navn
+                ctx.fillStyle = "black";
+                ctx.font = "30px Century Gothic";
+                ctx.fillText(data.navn,630, 60);
+                ctx.beginPath(); //circle
+                ctx.fillStyle = "#efa964";
+                ctx.strokeStyle = "#000000";
+                ctx.arc(data.morn, 50, 20, 0, 2*Math.PI); //førte tall får vi fra json
+                ctx.fill();
+                ctx.stroke();
 
-    fetch('https://bacit.info/hwr/20210929003209-b98a1235df20cdf07746ac142e11d8ac.json').then(function (response) {
-        if (response.ok) {
-            return response.json();
-        } else {
-            throw new Error("Something went wrong");
-        }
-    }).then(function(data) {
-        console.log(data);
-        ctx.beginPath(); //circle
-        ctx.fillStyle = "red";
-        ctx.strokeStyle = "#000000";
-        ctx.arc(data.samarbeid, 200, 20, 0, 2*Math.PI); //førte tall får vi fra json
-        ctx.fill();
-        ctx.stroke();
-    })
+                ctx.beginPath(); //circle
+                ctx.fillStyle = "#efa964";
+                ctx.strokeStyle = "#000000";
+                ctx.arc(data.morn, 200, 20, 0, 2*Math.PI); //førte tall får vi fra json
+                ctx.fill();
+                ctx.stroke();
+                ctx.beginPath(); //circle
+                ctx.fillStyle = "#efa964";
+                ctx.strokeStyle = "#000000";
+                ctx.arc(data.selja, 300, 20, 0, 2*Math.PI); //førte tall får vi fra json
+                ctx.fill();
+                ctx.stroke();
+                ctx.beginPath(); //circle
+                ctx.fillStyle = "#efa964";
+                ctx.strokeStyle = "#000000";
+                ctx.arc(data.faelf, 400, 20, 0, 2*Math.PI); //førte tall får vi fra json
+                ctx.fill();
+                ctx.stroke();
+            })
+            fetch('https://bacit.info/hwr/20210929175411-09ad771b02a2b8647dffbdddc1ecb069.json').then(function (response) {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error("Something went wrong");
+                }
+            }).then(function(data) {
+                console.log(data);
 
-    var cnv  = document.getElementById("cnv");
-    var ctx = cnv.getContext("2d");
-    ctx.lineWidth = 2;
-    ctx.clearRect(0, 0, cnv.width, cnv.height);
+                //Navn
+                ctx.fillStyle = "black";
+                ctx.font = "30px Century Gothic";
+                ctx.fillText(data.navn,320, 60);
+                ctx.beginPath(); //circle
+                ctx.fillStyle = "blue";
+                ctx.strokeStyle = "#000000";
+                ctx.arc(data.morn, 50, 20, 0, 2*Math.PI); //førte tall får vi fra json
+                ctx.fill();
+                ctx.stroke();
 
-    //Linje 1
-    ctx.fillStyle = "black";
-    ctx.font = "30px Arial";
-    ctx.fillText("Morgenfugl", 20, 200);
+                ctx.beginPath(); //circle
+                ctx.fillStyle = "blue";
+                ctx.strokeStyle = "#000000";
+                ctx.arc(data.morn, 200, 20, 0, 2*Math.PI); //førte tall får vi fra json
+                ctx.fill();
+                ctx.stroke();
+                ctx.beginPath(); //circle
+                ctx.fillStyle = "blue";
+                ctx.strokeStyle = "#000000";
+                ctx.arc(data.selja, 300, 20, 0, 2*Math.PI); //førte tall får vi fra json
+                ctx.fill();
+                ctx.stroke();
+                ctx.beginPath(); //circle
+                ctx.fillStyle = "blue";
+                ctx.strokeStyle = "#000000";
+                ctx.arc(data.faelf, 400, 20, 0, 2*Math.PI); //førte tall får vi fra json
+                ctx.fill();
+                ctx.stroke();
+            })
 
-    ctx.beginPath(); //line
-    ctx.strokeStyle = "#000000";
-    ctx.moveTo(200 ,200);
-    ctx.lineTo(600,200);
-    ctx.closePath();
-    ctx.stroke();
+            //Henter canvas elementet
+            var cnv  = document.getElementById("cnv");
+            var ctx = cnv.getContext("2d");
+            ctx.lineWidth = 2;
+            ctx.clearRect(0, 0, cnv.width, cnv.height);
 
+            //Linje 1 starter y=200
+            ctx.fillStyle = "black";
+            ctx.font = "30px Century Gothic";
+            ctx.fillText("Morgenfugl", 20, 200);
+            //Linje 1 blir tegnet
+            ctx.beginPath();
+            ctx.strokeStyle = "#000000";
+            ctx.moveTo(300 ,200);
+            ctx.lineTo(700,200);
+            ctx.closePath();
+            ctx.stroke();
 
+            ctx.fillStyle = "black";
+            ctx.font = "30px Century Gothic";
+            ctx.fillText("Nattugle", 800, 200);
 
-    ctx.fillStyle = "black";
-    ctx.font = "30px Arial";
-    ctx.fillText("Nattugle", 625, 200);
+            //Linje 2 starter y=300
+            ctx.fillStyle = "black";
+            ctx.font = "30px Century Gothic";
+            ctx.fillText("Samarbeid", 20, 300);
+            //Linje 2 blir tegnet
+            ctx.beginPath();
+            ctx.strokeStyle = "#000000";
+            ctx.moveTo(300 ,300);
+            ctx.lineTo(700,300);
+            ctx.closePath();
+            ctx.stroke();
 
-    //Linje 2
-    ctx.fillStyle = "black";
-    ctx.font = "30px Arial";
-    ctx.fillText("Samarbeid", 20, 300);
+            ctx.fillStyle = "black";
+            ctx.font = "30px Century Gothic";
+            ctx.fillText("Jobbe alene", 800, 300);
 
-    ctx.beginPath(); //line
-    ctx.strokeStyle = "#000000";
-    ctx.moveTo(200 ,300);
-    ctx.lineTo(600,300);
-    ctx.closePath();
-    ctx.stroke();
+            //Linje 3 starter y=400
+            ctx.fillStyle = "black";
+            ctx.font = "30px Century Gothic";
+            ctx.fillText("Fast arbeidstid", 20, 400);
+            //Linje 3 blir tegnet
+            ctx.beginPath();
+            ctx.strokeStyle = "#000000";
+            ctx.moveTo(300 ,400);
+            ctx.lineTo(700,400);
+            ctx.closePath();
+            ctx.stroke();
 
-    ctx.beginPath(); //circle
-    ctx.fillStyle = "#efa964";
-    ctx.strokeStyle = "#000000";
-    ctx.arc(550, 300, 20, 0, 2*Math.PI); //førte tall får vi fra json
-    ctx.fill();
-    ctx.stroke();
+            ctx.fillStyle = "black";
+            ctx.font = "30px Century Gothic";
+            ctx.fillText("Flexitid", 800, 400);
 
-    ctx.fillStyle = "black";
-    ctx.font = "30px Arial";
-    ctx.fillText("Selvstendig", 625, 300);
-
-</script>
+        </script>
+    </body>
 </html>

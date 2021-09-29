@@ -1,74 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>How We Roll</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="layout.css">
-    <link rel="stylesheet" href="visittkort.css">
-</head>
-<body>
-<div id="meny">
-    <div>
-        <a id="logo" href="index.html">Systematikere</a>
-    </div>
-
-    <div id="nav">
-        <a href="how-we-roll.html">Registrer</a>
-        <a href="hwr-report.html">Oversikt</a>
-        <a href="index.html#visittkort">Visittkort</a>
-    </div>
-</div>
-    <header id="header">
-        <img id="headerBilde" src="img/WorkStation.jpg">
-        <h1>Godt team arbeid er viktig for blablabla</h1>
-    </header>
-
-    <div id="info">
-        <p id="infoTekst">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dolor lacus, dapibus in sollicitudin vitae, bibendum sed velit. In egestas bibendum porta. Phasellus tortor ligula, sollicitudin id metus vel, tristique mattis turpis. Nam ante velit, tristique sit amet erat a, tempor convallis ligula. Etiam eleifend nunc a elit eleifend, ac feugiat sem feugiat. Donec tincidunt quis mi in gravida. Fusce venenatis varius massa, eget rhoncus metus dignissim et. Nunc faucibus accumsan massa, non tempor libero dignissim eget. Donec tempus non nisi eget efficitur. Donec sagittis mollis massa, sit amet vehicula felis vulputate sed.</p>
-            <button type="button" onclick="javascript:location.href='how-we-roll.html'" >Registrer</button>
-        &nbsp;
-            <button type="button" onclick="javascript:location.href='hwr-report.html'">Oversikt</button>
-    </div>
-
-    <div id="visittkort">
-        <h1>Visittkort</h1>
-        <div class="card">
-            <div class="picture">
-                <img src="/img/tonjeV2.png" alt="Illustrated portrait of Tonje">
+    <head>
+        <meta charset="UTF-8">
+        <title>Systematikere</title>
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="layout.css">
+        <link rel="stylesheet" href="visittkort.css">
+    </head>
+    <body>
+        <div id="meny">
+            <div>
+                <a id="logo" href="index.html">Systematikere</a>
             </div>
 
-
-            <div class="card-details">
-                <div class="firstname">Tonje</div>
-                <div class="lastname">Markseth</div>
-
-                <div class="card-about">
-                    <div class="item">
-                        <div class="input">Søndeled</div>
-                        <div class="label">From</div>
-                    </div>
-                    <div class="item">
-                        <div class="input">26</div>
-                        <div class="label">Age</div>
-                    </div>
-                    <div class="item">
-                        <div class="input"></div>
-                        <div class="label"></div>
-                    </div>
-                </div>
-                <div class="hobbies">
-                    <div class="input">Reading, watching tv-shows and movies, 3D puzzles, games and sleeping</div>
-                </div>
+            <div id="nav">
+                <a href="how-we-roll.html">Registrer</a>
+                <a href="hwr-report.html">Preferanser</a>
+                <a href="index.html#visittkort">Visittkort</a>
             </div>
-
         </div>
 
-    </div>
+        <header id="header">
+            <img id="headerBilde" src="img/WorkStation.jpg" alt="Bilde av et gruppemøte, bilde viser armer, laptoper, mobiler, nettbrett og notatbøker">
+            <h1>TEAMWORK MAKES THE DREAM WORK</h1>
+        </header>
 
-    <footer id="footer">
-        <p>Something</p>
-    </footer>
+        <div id="info">
+            <p id="infoTekst">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dolor lacus, dapibus in sollicitudin vitae, bibendum sed velit. In egestas bibendum porta. Phasellus tortor ligula, sollicitudin id metus vel, tristique mattis turpis. Nam ante velit, tristique sit amet erat a, tempor convallis ligula. Etiam eleifend nunc a elit eleifend, ac feugiat sem feugiat. Donec tincidunt quis mi in gravida. Fusce venenatis varius massa, eget rhoncus metus dignissim et. Nunc faucibus accumsan massa, non tempor libero dignissim eget. Donec tempus non nisi eget efficitur. Donec sagittis mollis massa, sit amet vehicula felis vulputate sed.</p>
 
-</body>
+            <button type="button" onclick="location.href='how-we-roll.html'" >REGISTRER</button>
+            &nbsp;
+            <button type="button" onclick="location.href='hwr-report.html'">PREFERANSER</button>
+        </div>
+
+        <div id="visittkort">
+            <h1>Visittkort</h1>
+            <div class="grid-container">
+                <! –– Visittkort Tonje -- !>
+                <div class="card">
+                    <div class="picture">
+                        <img src="/img/profilePic.png" alt="Profilbilde ikon">
+                    </div>
+
+                    <div class="card-details">
+                        <div class="firstname">Tonje</div>
+                        <div class="lastname">Markseth</div>
+                        <div class="school">Universitetet i Agder</div>
+                        <div class="program">IT og informasjonssystemer</div>
+                        <div class="card-about">
+                            <div class="item">
+                                <div class="label">E-post</div>
+                                <div class="input">tonjfm15@uia.no</div>
+                                <div class="label">Fødselsår</div>
+                                <div class="input">1995</div>
+                            </div>
+                            <div class="item">
+                                <div class="label">Mobil</div>
+                                <div class="input">976 39 492</div>
+                                <div class="label">Stjernetegn</div>
+                                <div class="input">Fiskene</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <! –– Visittkort Asbjørn --!>
+                <div class="card">
+                    <div class="picture">
+                        <img src="/img/profilePic.png" alt="Profilbilde ikon">
+                    </div>
+
+                    <div class="card-details">
+                        <div class="firstname">Asbjørn</div>
+                        <div class="lastname">Håland Hestnes</div>
+                        <div class="school">Universitetet i Agder</div>
+                        <div class="program">IT og informasjonssystemer</div>
+                        <div class="card-about">
+                            <div class="item">
+                                <div class="label">E-post</div>
+                                <div class="input">asbjornhh@uia.no</div>
+                                <div class="label">Fødselsår</div>
+                                <div class="input">?</div>
+                            </div>
+                            <div class="item">
+                                <div class="label">Mobil</div>
+                                <div class="input">976 55 523</div>
+                                <div class="label">Stjernetegn</div>
+                                <div class="input">?</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <! –– Visittkort Helene --!>
+                <div class="card">
+                    <div class="picture">
+                        <img src="/img/profilePic.png" alt="Profilbilde ikon">
+                    </div>
+
+                    <div class="card-details">
+                        <div class="firstname">Helene Louise</div>
+                        <div class="lastname">Ludvigsen</div>
+                        <div class="school">Universitetet i Agder</div>
+                        <div class="program">IT og informasjonssystemer</div>
+                        <div class="card-about">
+                            <div class="item">
+                                <div class="label">E-post</div>
+                                <div class="input">mail@post.yo</div>
+                                <div class="label">Fødselsår</div>
+                                <div class="input">1995</div>
+                            </div>
+                            <div class="item">
+                                <div class="label">Mobil</div>
+                                <div class="input">123 45 678</div>
+                                <div class="label">Stjernetegn</div>
+                                <div class="input">?</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <! –– Visittkort Eirik --!>
+                <div class="card">
+                    <div class="picture">
+                        <img src="/img/profilePic.png" alt="Profilbilde ikon">
+                    </div>
+
+                    <div class="card-details">
+                        <div class="firstname">Eirik</div>
+                        <div class="lastname">S. Nedland</div>
+                        <div class="school">Universitetet i Agder</div>
+                        <div class="program">IT og informasjonssystemer</div>
+                        <div class="card-about">
+                            <div class="item">
+                                <div class="label">E-post</div>
+                                <div class="input">eriksn@uia.no</div>
+                                <div class="label">Fødselsår</div>
+                                <div class="input">?</div>
+                            </div>
+                            <div class="item">
+                                <div class="label">Mobil</div>
+                                <div class="input">908 08 081</div>
+                                <div class="label">Stjernetegn</div>
+                                <div class="input">?</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <! –– Visittkort Frida --!>
+                <div class="card">
+                    <div class="picture">
+                        <img src="/img/profilePic.png" alt="Profilbilde ikon">
+                    </div>
+
+                    <div class="card-details">
+                        <div class="firstname">Frida</div>
+                        <div class="lastname">L. Valvik</div>
+                        <div class="school">Universitetet i Agder</div>
+                        <div class="program">IT og informasjonssystemer</div>
+                        <div class="card-about">
+                            <div class="item">
+                                <div class="label">E-post</div>
+                                <div class="input">fridalv@uia.no</div>
+                                <div class="label">Fødselsår</div>
+                                <div class="input">?</div>
+                            </div>
+                            <div class="item">
+                                <div class="label">Mobil</div>
+                                <div class="input">903 61 541</div>
+                                <div class="label">Stjernetegn</div>
+                                <div class="input">?</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <! –– Visittkort Eziz --!>
+                <div class="card">
+                    <div class="picture">
+                        <img src="/img/profilePic.png" alt="Profilbilde ikon">
+                    </div>
+
+                    <div class="card-details">
+                        <div class="firstname">Eziz</div>
+                        <div class="lastname">Ømer</div>
+                        <div class="school">Universitetet i Agder</div>
+                        <div class="program">IT og informasjonssystemer</div>
+                        <div class="card-about">
+                            <div class="item">
+                                <div class="label">E-post</div>
+                                <div class="input">ezizo18@uia.no</div>
+                                <div class="label">Fødselsår</div>
+                                <div class="input">?</div>
+                            </div>
+                            <div class="item">
+                                <div class="label">Mobil</div>
+                                <div class="input">482 07 684</div>
+                                <div class="label">Stjernetegn</div>
+                                <div class="input">?</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <! –– Visittkort Silje --!>
+                <div class="card">
+                    <div class="picture">
+                        <img src="/img/profilePic.png" alt="Profilbilde ikon">
+                    </div>
+
+                    <div class="card-details">
+                        <div class="firstname">Silje Elise</div>
+                        <div class="lastname">Strøm</div>
+                        <div class="school">Universitetet i Agder</div>
+                        <div class="program">IT og informasjonssystemer</div>
+                        <div class="card-about">
+                            <div class="item">
+                                <div class="label">E-post</div>
+                                <div class="input">siljees@uia.no</div>
+                                <div class="label">Fødselsår</div>
+                                <div class="input">?</div>
+                            </div>
+                            <div class="item">
+                                <div class="label">Mobil</div>
+                                <div class="input">481 03 000</div>
+                                <div class="label">Stjernetegn</div>
+                                <div class="input">?</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <! –– Visittkort Stian --!>
+                <div class="card">
+                    <div class="picture">
+                        <img src="/img/profilePic.png" alt="Profilbilde ikon">
+                    </div>
+
+                    <div class="card-details">
+                        <div class="firstname">Stian</div>
+                        <div class="lastname">Steinsland</div>
+                        <div class="school">Universitetet i Agder</div>
+                        <div class="program">IT og informasjonssystemer</div>
+                        <div class="card-about">
+                            <div class="item">
+                                <div class="label">E-post</div>
+                                <div class="input">stiants@uia.no</div>
+                                <div class="label">Fødselsår</div>
+                                <div class="input">?</div>
+                            </div>
+                            <div class="item">
+                                <div class="label">Mobil</div>
+                                <div class="input">468 98 858</div>
+                                <div class="label">Stjernetegn</div>
+                                <div class="input">?</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer id="footer">
+            <h3>Systematikere</h3>
+            <a href="https://github.com/3Beast/Gruppe-3B" target="_blank">Laget av Gruppe 3B</a>
+        </footer>
+
+    </body>
 </html>

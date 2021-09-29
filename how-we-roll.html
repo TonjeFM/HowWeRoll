@@ -1,84 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Registrer</title>
-    <link rel="stylesheet" href="layout.css">
-</head>
-<body>
-<div id="meny">
-    <div>
-        <a id="logo" href="index.html">Systematikere</a>
-    </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Systematikere - Registrer dine preferanser</title>
+        <link rel="stylesheet" href="layout.css">
+        <style>
+            #regpref{
+                width: 100%;
+                height: max-content;
+                padding-top: 50px;
 
-    <div id="nav">
-        <a href="how-we-roll.html">Registrer</a>
-        <a href="hwr-report.html">Oversikt</a>
-        <a href="index.html#visittkort">Visittkort</a>
-    </div>
-</div>
-    <header id="header">
-        <img id="headerBilde" src="img/Team.jpg">
-        <h1>Fyll inn informasjonen din og dine preferanser for å finne ditt perfekte team</h1>
-    </header>
+            }
+            form {
+                text-align: center;
 
-    <div id="registrer">
-        <form>
+            }
+            .spm {
+                font-size: 20px;
+                margin-bottom: 50px;
+                text-align: center;
+            }
+            input[type=text], select {
+                font-family: "Century Gothic", sans-serif;
+                width: 20%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                margin-bottom: 50px;
+            }
+            /*Kode hentet 29.09.2021 fra:https://codepen.io/renaudtertrais/pen/waLXVx */
+            .slider {
+                -webkit-appearance: none;
+                cursor: pointer;
+                height: 0;
+                width: 50%;
+                border-bottom: 2px solid black;
+                background-color: transparent;
+                margin-bottom: 50px;
+                margin-top: 50px;
+            }
+            .slider::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                width: 30px;
+                height: 30px;
+                background-color: white;
+                border-radius: 30px;
+                border: 2px solid black;
+                cursor: pointer;
+            }
+            .slider::-webkit-slider-thumb:hover {
+                -webkit-appearance: none;
+                width: 30px;
+                height: 30px;
+                background-color: white;
+                border-radius: 30px;
+                border: 2px solid #efa964;
+                cursor: pointer;
 
-            <label for="morgenfugl">Morgenfugl:</label><br>
-            <input type="range" id="morgenfugl" name="morgenfugl" min="200" max="600" value="400">
-            <label for="samarbeid">Samarbeid:</label><br>
+            }
 
-            <input type="range" id="samarbeid" name="samarbeid" min="200" max="600" value="400">
-            <label for="flexitid">Flexitid:</label><br>
-            <input type="range" id="flexitid" name="flexitid" min="200" max="600" value="400">
+            #btn {
+                text-align: center;
+                display: inline-block;
+                font-family: "Century Gothic", sans-serif;
+                font-size: 40px;
+                border: 2px solid Black;
+                background-color: transparent;
+                border-radius: 30px;
+                margin-bottom: 100px;
+                width: 330px;
+                height: 92px;
 
-            <input type="submit" value="Lagre">
-        </form>
-    </div>
-<div class="results">
-    <h2>Form Data</h2>
-    <pre></pre>
-</div>
+            }
+            #btn:hover {
+                cursor: pointer;
+                border: 2px solid #efa964;
+                color: #efa964;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="meny">
+            <div>
+                <a id="logo" href="index.html">Systematikere</a>
+            </div>
 
-    <footer id="footer">
-        <p>Something</p>
-    </footer>
+            <div id="nav">
+                <a href="how-we-roll.html">Registrer</a>
+                <a href="hwr-report.html">Preferanser</a>
+                <a href="index.html#visittkort">Visittkort</a>
+            </div>
+        </div>
+        <header id="header">
+                <img id="headerBilde" src="img/Team.jpg" alt="Bilde av mennesker som står i ring med hendene strukket ut i midten">
+                <h1>SETT DINE PREFERANSER</h1>
+        </header>
 
-<script>
-    // From https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch (seen 2021-09-27)
-    // Example POST method implementation using fetch:
-    async function postData(url = '', data = {}) {
-        // Default options are marked with *
-        const response = await fetch(url, {
-            method: 'POST', // *GET, POST, PUT, DELETE, etc.
-            mode: 'cors', // no-cors, *cors, same-origin
-            cache: 'no-cache', // *default, no-cache, reload, force-cache,only-if-cached
-            credentials: 'same-origin', // include, *same-origin, omit
-            headers: {
-                'Content-Type': 'application/json',
-                // 'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            redirect: 'follow', // manual, *follow, error
-            referrerPolicy: 'no-referrer', // no-referrer,*no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-            body: JSON.stringify(data) // body data type must match"Content-Type"header
-        });
-        return response.json(); // parses JSON response into native JavaScriptobjects
-    }
+        <div id="regpref">
+            <form>
+                <label class="spm" for="navn">Navn:</label>
+                <input type="text" id="navn" name="navn" placeholder="Navn"><br>
 
-    function handleSubmit(event) {
-        event.preventDefault();
-        const data = new FormData(event.target);
-        const formJSON = Object.fromEntries(data.entries());
-        const results = document.querySelector('.results pre');
-        postData('https://bacit.info/', formJSON)
-            .then(data => {
-                results.innerText = JSON.stringify(data, null, 2);
-            });
-    }
-    const form = document.querySelector('form');
-    form.addEventListener('submit', handleSubmit);
-</script>
-</body>
+                <! -- "meln" morgenfugl eller nattugle--!>
+                <label class="spm" for="morn">Er du en morgenfugl eller nattugle?</label><br>
+                <label for="morn">Morgenfugl:</label>
+                <input type="range" class="slider" id="morn" name="morn" min="300" max="700" value="500">
+                <label for="morn">Nattugle</label><br>
+
+                <! -- "selja" samarbeid eller jobbe alene--!>
+                <label class="spm" for="selja">Liker du best å samarbeide eller jobbe alene?</label><br>
+                <label for="selja">Samarbeid</label>
+                <input type="range" class="slider" id="selja" name="selja" min="300" max="700" value="500">
+                <label for="selja">Jobbe alene</label><br>
+
+                <! -- "faelf" fast arbeidstid eller flexitid--!>
+                <label class="spm" for="faelf">Liker du best å ha en fast arbeidstid eller flexitid?</label><br>
+                <label for="faelf">Fast arbeidstid</label>
+                <input type="range" class="slider" id="faelf" name="faelf" min="300" max="700" value="500">
+                <label for="faelf">Flexitid</label><br>
+
+                <input id="btn" type="submit" value="SEND">
+            </form>
+            <div class="results">
+                <h2>Form Data</h2>
+                <pre></pre>
+            </div>
+        </div>
+
+
+        <footer id="footer">
+            <h3>Systematikere</h3>
+            <a href="https://github.com/3Beast/Gruppe-3B" target="_blank">Laget av Gruppe 3B</a>
+        </footer>
+
+        <script>
+            // From https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch (seen 2021-09-27)
+            // Example POST method implementation using fetch:
+            async function postData(url = '', data = {}) {
+                // Default options are marked with *
+                const response = await fetch(url, {
+                    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                    mode: 'cors', // no-cors, *cors, same-origin
+                    cache: 'no-cache', // *default, no-cache, reload, force-cache,only-if-cached
+                    credentials: 'same-origin', // include, *same-origin, omit
+                    headers: {
+                        'Content-Type': 'application/json',
+                        // 'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    redirect: 'follow', // manual, *follow, error
+                    referrerPolicy: 'no-referrer', // no-referrer,*no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+                    body: JSON.stringify(data) // body data type must match"Content-Type"header
+                });
+                return response.json(); // parses JSON response into native JavaScriptobjects
+            }
+
+            function handleSubmit(event) {
+                event.preventDefault();
+                const data = new FormData(event.target);
+                const formJSON = Object.fromEntries(data.entries());
+                const results = document.querySelector('.results pre');
+                postData('https://bacit.info/', formJSON)
+                    .then(data => {
+                        results.innerText = JSON.stringify(data, null, 2);
+
+                    });
+            }
+            const form = document.querySelector('form');
+            form.addEventListener('submit', handleSubmit);
+        </script>
+    </body>
 </html>
