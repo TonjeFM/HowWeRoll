@@ -10,8 +10,6 @@
                 height: max-content;
                 text-align: center;
                 padding-top: 50px;
-
-
             }
 
         </style>
@@ -71,12 +69,14 @@
                 ctx.arc(data.morn, 200, 20, 0, 2*Math.PI); //førte tall får vi fra json
                 ctx.fill();
                 ctx.stroke();
+
                 ctx.beginPath(); //circle
                 ctx.fillStyle = "#efa964";
                 ctx.strokeStyle = "#000000";
                 ctx.arc(data.selja, 300, 20, 0, 2*Math.PI); //førte tall får vi fra json
                 ctx.fill();
                 ctx.stroke();
+
                 ctx.beginPath(); //circle
                 ctx.fillStyle = "#efa964";
                 ctx.strokeStyle = "#000000";
@@ -118,6 +118,47 @@
                 ctx.stroke();
                 ctx.beginPath(); //circle
                 ctx.fillStyle = "blue";
+                ctx.strokeStyle = "#000000";
+                ctx.arc(data.faelf, 400, 20, 0, 2*Math.PI); //førte tall får vi fra json
+                ctx.fill();
+                ctx.stroke();
+            })
+            fetch('https://bacit.info/hwr/20210930123257-66daa9fc42b03157b97d8b6f8f2dd218.json').then(function (response) {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error("Something went wrong");
+                }
+            }).then(function(data) {
+                console.log(data);
+
+                //Navn
+                ctx.fillStyle = "black";
+                ctx.font = "30px Century Gothic";
+                ctx.fillText(data.navn,630, 60);
+                ctx.beginPath(); //circle
+                ctx.fillStyle = "red";
+                ctx.strokeStyle = "#000000";
+                ctx.arc(data.morn, 50, 20, 0, 2*Math.PI); //førte tall får vi fra json
+                ctx.fill();
+                ctx.stroke();
+
+                ctx.beginPath(); //circle
+                ctx.fillStyle = "red";
+                ctx.strokeStyle = "#000000";
+                ctx.arc(data.morn, 200, 20, 0, 2*Math.PI); //førte tall får vi fra json
+                ctx.fill();
+                ctx.stroke();
+
+                ctx.beginPath(); //circle
+                ctx.fillStyle = "red";
+                ctx.strokeStyle = "#000000";
+                ctx.arc(data.selja, 300, 20, 0, 2*Math.PI); //førte tall får vi fra json
+                ctx.fill();
+                ctx.stroke();
+
+                ctx.beginPath(); //circle
+                ctx.fillStyle = "red";
                 ctx.strokeStyle = "#000000";
                 ctx.arc(data.faelf, 400, 20, 0, 2*Math.PI); //førte tall får vi fra json
                 ctx.fill();
